@@ -1,0 +1,11 @@
+body{
+  background-color: #b5caff;
+  font-size: 120%;
+}
+
+.btn-outline-primary{
+ /*formatting goes here*/
+
+ --bs-btn-color:black;
+ --bs-btn-border-color:black;
+  }
