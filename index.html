@@ -22,12 +22,16 @@
        let pagina = await a.text();
        
         
-        console.log(a)
         remove();
         x.classList.add("is-active");
         document.getElementById('alvo').innerHTML = pagina;
         return false;
     }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+    
+        ativa(document.getElementById('home'),'home/index.html')
+  });
 </script>
 <body>
     <section class="section">
@@ -110,18 +114,8 @@
 
   <section>
     <div class="container" id="alvo">
-        <img src="picture.jpg" width="150">
-        <p><strong>Dr. Fábio Rocha</strong></p>
-        <br>
-        <p>Professor no Departamento de Computação (UFSC - Araranguá) desde 2012</p>
-        <p>Universidade Federal de Santa Catarina - UFSC</p>
-        <br>
-        <p>Professor do Departamento de Informática</p>
-        <p>Universidade Tecnológica Federal do Paraná 2010-2012</p>
-        <br>
-        <p>Professor do Departamento de Engenharia Elétrica</p>
-        <p>Universidade do Estado de Santa Catarina (UDESC) 2008-2010</p>
-      </div>
+        
+    </div>
    
   </section>
 
