@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+
+
 <html>
 
 <header>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="Thu, 01 Jan 1970 00:00:00 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     
 </header>
 <script>
     var menu='';
+    var cache=[];
+
     function remove ()
     {
         const all = document.getElementsByClassName("navbar-item");
@@ -17,7 +27,13 @@
     async function ativa (x, site)
     {
         
+        for (let a=0; a< cache.length;a++)
+        {
+            if (cache[a].site==site)
+            {
 
+            }
+        }
        let a = await fetch(site);
        let pagina = await a.text();
        
@@ -30,7 +46,24 @@
 
     document.addEventListener("DOMContentLoaded", function (event) {
     
-        ativa(document.getElementById('home'),'home/index.html')
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Add a click event on each of them
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+        ativa(document.getElementById('home'),'home/index.html');
+
   });
 </script>
 <body>
