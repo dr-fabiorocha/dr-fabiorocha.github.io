@@ -19,11 +19,13 @@
         
 
        let a = await fetch(site);
+       let pagina = await a.text();
+       
         
         console.log(a)
         remove();
         x.classList.add("is-active");
-
+        document.getElementById('alvo').innerHTML = pagina;
         return false;
     }
 </script>
