@@ -1,7 +1,17 @@
+   a.navbar-item {
+  color: white;
+
+}
 
    a.navbar-item.is-active {
-  color: white;
+
   background-color: grey;;
 }
 
 
+
+
+ .navbar { 
+ background-color:#10689e;
+   
+        } 
