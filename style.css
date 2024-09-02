@@ -15,3 +15,9 @@
  background-color:#10689e;
    
         } 
+        
+.navbar-burger > span {
+	background-color: white;
+}
+
+
