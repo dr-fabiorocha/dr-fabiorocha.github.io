@@ -11,145 +11,142 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
 </header>
 <script>
-    var menu='';
-    var cache=[];
+    var menu = '';
+    var cache = [];
 
-    function remove ()
-    {
+    function remove() {
         const all = document.getElementsByClassName("navbar-item");
         for (let i = 0; i < all.length; i++) {
             all[i].classList.remove('is-active');
         }
     }
-    async function ativa (x, site)
-    {
-        
-        for (let a=0; a< cache.length;a++)
-        {
-            if (cache[a].site==site)
-            {
+    async function ativa(x, site) {
+
+        for (let a = 0; a < cache.length; a++) {
+            if (cache[a].site == site) {
 
             }
         }
-       let a = await fetch(site);
-       let pagina = await a.text();
-       
-        
+        let a = await fetch(site);
+        let pagina = await a.text();
+
+
         remove();
         x.classList.add("is-active");
         document.getElementById('alvo').innerHTML = pagina;
         return false;
     }
 
-    document.addEventListener("DOMContentLoaded", function (event) {
-    
+    document.addEventListener("DOMContentLoaded", function(event) {
+
         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-// Add a click event on each of them
-$navbarBurgers.forEach( el => {
-  el.addEventListener('click', () => {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
 
-    // Get the target from the "data-target" attribute
-    const target = el.dataset.target;
-    const $target = document.getElementById(target);
+                // Get the target from the "data-target" attribute
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
 
-    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    el.classList.toggle('is-active');
-    $target.classList.toggle('is-active');
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
 
-  });
-});
-        ativa(document.getElementById('home'),'home/index.html');
+            });
+        });
+        ativa(document.getElementById('home'), 'home/index.html');
 
-  });
+    });
 </script>
+
 <body>
     <section class="section">
-  <nav class="navbar is-dark
+        <nav class="navbar is-dark
      is-fixed-top">
-        <div class="navbar-brand">
+            <div class="navbar-brand">
 
 
 
 
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home/index.html');return false;">
-                    Home
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </a>
-
-                <a class="navbar-item" onclick="ativa(this);return false;">
-                    Teaching
-                </a>
-
-                <div class="navbar-item has-dropdown is-hoverable  is-dark">
-                    <a class="navbar-link">
-                        Final Projects (TCC)
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" onclick="ativa(this,'tcc/topics.html');return false;">
-                            New topics
-                        </a>
-                        <a class="navbar-item" onclick="ativa(this,'tcc/current.html');return false;">
-                            Current projects
-                        </a>
-                        <a class="navbar-item" onclick="ativa(this,'tcc/previous.html');return false;">
-                            Previous projects
-                        </a>
-                    </div>
-                </div>
-                <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
-                    Research
-                </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Extension
-                    </a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href='https://cafecomstartups.ufsc.br/'>
-                           Café com Startups
-                        </a>
-                      
-                    </div>
-                </div>
-
-                <a class="navbar-item"  href="" onclick="ativa(this,'skills/index.html');return false;">
-                    Skills
-                </a>
-                <a class="navbar-item"  href="" onclick="ativa(this,'awards/index.html');return false;">
-                    Awards
-                </a>
-                <a class="navbar-item"  href="" onclick="ativa(this, 'office/index.html');return false;">
-                    Office
-                </a>
-                <a class="navbar-item" href="" onclick="ativa(this,'contact/index.html');return false;">
-                    Contact
-                </a>
-
             </div>
-    </nav>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home/index.html');return false;">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" onclick="ativa(this);return false;">
+                        Teaching
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable  is-dark">
+                        <a class="navbar-link">
+                            Final Projects (TCC)
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" onclick="ativa(this,'tcc/topics.html');return false;">
+                                New topics
+                            </a>
+                            <a class="navbar-item" onclick="ativa(this,'tcc/current.html');return false;">
+                                Current projects
+                            </a>
+                            <a class="navbar-item" onclick="ativa(this,'tcc/previous.html');return false;">
+                                Previous projects
+                            </a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
+                        Research
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Extension
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href='https://cafecomstartups.ufsc.br/'>
+                                Café com Startups
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <a class="navbar-item" href="" onclick="ativa(this,'skills/index.html');return false;">
+                        Skills
+                    </a>
+                    <a class="navbar-item" href="" onclick="ativa(this,'awards/index.html');return false;">
+                        Awards
+                    </a>
+                    <a class="navbar-item" href="" onclick="ativa(this, 'office/index.html');return false;">
+                        Office
+                    </a>
+                    <a class="navbar-item" href="" onclick="ativa(this,'contact/index.html');return false;">
+                        Contact
+                    </a>
+
+                </div>
+        </nav>
     </section>
 
 
-  <section>
-    <div class="container" id="alvo">
-        
-    </div>
-   
-  </section>
+    <section>
+        <div class="container" id="alvo">
+
+        </div>
+
+    </section>
 
 </body>
 
