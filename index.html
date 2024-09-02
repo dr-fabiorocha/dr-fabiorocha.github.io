@@ -23,21 +23,25 @@
             all[i].classList.remove('is-active');
         }
     }
+    function closeMenu()
+    {
+        
+        document.getElementById('navbarMenuHeroC').classList.remove('is-active');
+        document.getElementById('burger').classList.remove('is-active');
+
+    }
     async function ativa(x, site) {
 
-        for (let a = 0; a < cache.length; a++) {
-            if (cache[a].site == site) {
-
-            }
-        }
         let a = await fetch(site);
         let pagina = await a.text();
-
+        console.log(pagina)
 
         remove();
         x.classList.add("is-active");
         document.getElementById('alvo').innerHTML = pagina;
-        return false;
+        // close menu
+        closeMenu();
+        return true;
     }
 
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -50,15 +54,15 @@
 
                 // Get the target from the "data-target" attribute
                 const target = el.dataset.target;
-                const $target = document.getElementById(target);
+                const target2 = document.getElementById(target);
 
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                 el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-
+                target2.classList.toggle('is-active');
+               // ativa(target2, 'home/index.html');
             });
         });
-        ativa(document.getElementById('home'), 'home/index.html');
+       // ativa(document.getElementById('home'), 'home/index.html');
 
     });
 </script>
@@ -66,26 +70,21 @@
 <body>
     <section class="section">
         <nav class="navbar is-dark
-     is-fixed-top">
-            <div class="navbar-brand">
+     is-fixed-top">              <div class="navbar-brand">
 
+                <a role="button" class="navbar-burger" id="burger" data-target="navbarMenuHeroC">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
 
-
-
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
                 </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
+              </div>
+              <div id="navbarMenuHeroC" class="navbar-menu">
                 <div class="navbar-start">
                     <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home/index.html');return false;">
                         Home
                     </a>
-
                     <a class="navbar-item" onclick="ativa(this);return false;">
                         Teaching
                     </a>
@@ -132,16 +131,21 @@
                     <a class="navbar-item" href="" onclick="ativa(this, 'office/index.html');return false;">
                         Office
                     </a>
-                    <a class="navbar-item" href="" onclick="ativa(this,'contact/index.html');return false;">
+                    <a class="navbar-item" href="" onclick="ativa(this, 'contact/index.html');return false;">
                         Contact
                     </a>
-
                 </div>
-        </nav>
-    </section>
+              </div>
+    
+
+              </nav>
+
+      </section>
 
 
-    <section>
+      
+
+      <section>
         <div class="container" id="alvo">
 
         </div>
