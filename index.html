@@ -8,6 +8,8 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="Thu, 01 Jan 1970 00:00:00 GMT">
     <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
@@ -23,9 +25,9 @@
             all[i].classList.remove('is-active');
         }
     }
-    function closeMenu()
-    {
-        
+
+    function closeMenu() {
+
         document.getElementById('navbarMenuHeroC').classList.remove('is-active');
         document.getElementById('burger').classList.remove('is-active');
 
@@ -57,12 +59,12 @@
                 const target2 = document.getElementById(target);
 
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
+                 el.classList.toggle('is-active');
                 target2.classList.toggle('is-active');
-               // ativa(target2, 'home/index.html');
+                // ativa(target2, 'home/index.html');
             });
         });
-       // ativa(document.getElementById('home'), 'home/index.html');
+        // ativa(document.getElementById('home'), 'home/index.html');
 
     });
 </script>
@@ -70,17 +72,22 @@
 <body>
     <section class="section">
         <nav class="navbar is-dark
-     is-fixed-top">              <div class="navbar-brand">
+     is-fixed-top">
 
-                <a role="button" class="navbar-burger" id="burger" data-target="navbarMenuHeroC">
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
 
-                </a>
-              </div>
-              <div id="navbarMenuHeroC" class="navbar-menu">
+            <div class="navbar-brand">
+                <divrole="button"  id="burger"  class="navbar-burger" data-target="navbarMenuHeroC">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </div>
+                </div>
+
+
+                
+            </div>
+            <div id="navbarMenuHeroC" class="navbar-menu">
                 <div class="navbar-start">
                     <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home/index.html');return false;">
                         Home
@@ -95,12 +102,12 @@
                     <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
                         Research
                     </a>
-    
 
-                        <a class="navbar-item" onclick="ativa(this,'extension/index.html');return false;">
-                            Extension
-                        </a>
-                       
+
+                    <a class="navbar-item" onclick="ativa(this,'extension/index.html');return false;">
+                        Extension
+                    </a>
+
 
                     <a class="navbar-item" href="" onclick="ativa(this,'skills/index.html');return false;">
                         Skills
@@ -115,17 +122,17 @@
                         Contact
                     </a>
                 </div>
-              </div>
-    
-
-              </nav>
-
-      </section>
+            </div>
 
 
-      
+        </nav>
 
-      <section>
+    </section>
+
+
+
+
+    <section>
         <div class="container" id="alvo">
 
         </div>
