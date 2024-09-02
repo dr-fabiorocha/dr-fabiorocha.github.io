@@ -1,57 +1,128 @@
-<!DOCTYPE html>
+<html>
 
-<html lang='pt-br'>
+<header>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</header>
+<script>
+    var menu='';
+    function remove ()
+    {
+        const all = document.getElementsByClassName("navbar-item");
+        for (let i = 0; i < all.length; i++) {
+            all[i].classList.remove('is-active');
+        }
+    }
+    async function ativa (x, site)
+    {
+        const url = "text.html";
 
-<head>
-    <title>My personal webpage</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+       let a = await fetch(site);
+        
+        console.log(this)
+        remove();
+        x.classList.add("is-active");
 
-    <link rel="stylesheet" href="assets/bootstrap.min.css" >
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-
-    <link rel="stylesheet" href="./assets/estilo.css" >
-</head>
-
-
-
+        return false;
+    }
+</script>
 <body>
-    <div class="container p-2 ms-1">
-        <div class="row">
-            <div class="col-6 col-md-6">
-
-                <img width="150px" class="shadow-lg  mb-5 bg-body rounded img-fluid" alt="photo" src="assets/foto2.webp">
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="text">
-                    Dr. Fábio Rocha
-
-                    Departamento de Computação UFSC - Araranguá
-
-                    Universidade Federal de Santa Catarina - UFSC
+    <section class="section">
+  <nav class="navbar is-dark
+     is-fixed-top">
+        <div class="navbar-brand">
 
 
+
+
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true">sss</span>
+                <span aria-hidden="true">ddd</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home.html');return false;">
+                    Home
+                </a>
+
+                <a class="navbar-item" onclick="ativa(this);return false;">
+                    Teaching
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable  is-dark">
+                    <a class="navbar-link">
+                        Final Projects (TCC)
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" onclick="ativa(this,'tcc/topics.html');return false;">
+                            New topics
+                        </a>
+                        <a class="navbar-item" onclick="ativa(this,'tcc/current.html');return false;">
+                            Current students
+                        </a>
+                        <a class="navbar-item" onclick="ativa(this,'tcc/previous.html');return false;">
+                            Previous students
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
+                    Research
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Extension
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" onclick="ativa(this,'extension/cafe.html');return false;">
+                           Café com Startups
+                        </a>
+                      
+                    </div>
                 </div>
 
+                <a class="navbar-item"  href="" onclick="ativa(this,'skills.html');return false;">
+                    Skills
+                </a>
+                <a class="navbar-item"  href="" onclick="ativa(this,'awards.html');return false;">
+                    Awards
+                </a>
+                <a class="navbar-item"  href="" onclick="ativa(this, 'office.html');return false;">
+                    Office
+                </a>
+                <a class="navbar-item" href="" onclick="ativa(this,'contact.html');return false;">
+                    Contact
+                </a>
+
             </div>
-        </div>
+    </nav>
+    </section>
 
 
+  <section>
+    <div class="container" id="alvo">
+        <img src="picture.jpg" width="150">
+        <p><strong>Dr. Fábio Rocha</strong></p>
+        <br>
+        <p>Professor no Departamento de Computação (UFSC - Araranguá) desde 2012</p>
+        <p>Universidade Federal de Santa Catarina - UFSC</p>
+        <br>
+        <p>Professor do Departamento de Informática</p>
+        <p>Universidade Tecnológica Federal do Paraná 2010-2012</p>
+        <br>
+        <p>Professor do Departamento de Engenharia Elétrica</p>
+        <p>Universidade do Estado de Santa Catarina (UDESC) 2008-2010</p>
+      </div>
+   
+  </section>
 
-        <div class='paragrafo p-2'>
-            <a href='https://cloud.solutions4fun.com.br/s/ZXr7JnrbZSPjip7'        target="_self" class="btn   btn-outline-primary"> <img src="assets/classes.svg" alt="Bootstrap" width="32" height="32">Teaching</a>
-            <a href='research/index.html' target="_self" class="btn   btn-outline-primary"><img src="assets/research.svg" alt="Bootstrap" width="32" height="32"> Research </a>
-            <a href='contact/index.html'  target="_self" class="btn   btn-outline-primary"><img src="assets/contact.svg" alt="Bootstrap" width="32" height="32"> Contact</a>
-            <a href='skills/index.html'   target="_self" class="btn   btn-outline-primary"><img src="assets/skills.svg" alt="Bootstrap" width="32" height="32"> Skills</a> 
-	        <a href='office/index.html'   target="_self" class="btn   btn-outline-primary"><img src="assets/office.svg" alt="Bootstrap" width="32" height="32"> Office</a>
-            <a href='awards/index.html'   target="_self" class="btn   btn-outline-primary"><img src="assets/awards.svg" alt="Bootstrap" width="32" height="32"> Awards</a>
-                 
-        </div>
-    </div>
 </body>
 
 </html>
