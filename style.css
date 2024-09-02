@@ -20,4 +20,11 @@
 	background-color: white;
 }
 
+.container {
+ padding:10px;
+}
 
+body {
+  overflow-x: auto; /* Show horizontal scrollbar */
+
+}
