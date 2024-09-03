@@ -32,14 +32,21 @@
         document.getElementById('burger').classList.remove('is-active');
 
     }
+    function volta()
+    {
+    }
     async function ativa(x, site) {
 
         let a = await fetch(site);
         let pagina = await a.text();
         console.log(pagina)
 
-        remove();
-        x.classList.add("is-active");
+        if (x != null)
+        {
+            remove();
+            x.classList.add("is-active");
+        }
+        
         document.getElementById('alvo').innerHTML = pagina;
         // close menu
         closeMenu();
@@ -92,14 +99,14 @@
                     <a id="home" class="navbar-item  is-active" onclick="ativa(this, 'home/index.html');return false;">
                         Home
                     </a>
-                    <a class="navbar-item" onclick="ativa(this);return false;">
+                    <a class="navbar-item" href="https://cloud.solutions4fun.com.br/s/ZXr7JnrbZSPjip7" target="_blank">
                         Teaching
                     </a>
 
-                    <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
+                    <a class="navbar-item" onclick="ativa(this,'tcc/index.html');return false;">
                         TCC
                     </a>
-                    <a class="navbar-item" onclick="ativa(this,'research.html');return false;">
+                    <a class="navbar-item" onclick="ativa(this,'research/index.html');return false;">
                         Research
                     </a>
 
