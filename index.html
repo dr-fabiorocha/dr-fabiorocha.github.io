@@ -17,7 +17,8 @@
 </header>
 <script>
     var menu = '';
-    var cache = [];
+    var historico='';
+    var atual='';
 
     function remove() {
         const all = document.getElementsByClassName("navbar-item");
@@ -32,19 +33,32 @@
         document.getElementById('burger').classList.remove('is-active');
 
     }
-    function volta()
+    async function volta()
     {
+
+        let site = historico;
+        console.log(site);
+        let a = await fetch(site);
+        let pagina = await a.text();
+        document.getElementById('alvo').innerHTML = pagina;
+        return true;
+
     }
     async function ativa(x, site) {
 
         let a = await fetch(site);
         let pagina = await a.text();
-        console.log(pagina)
 
         if (x != null)
         {
+            atual = site;
+            console.log(atual)
             remove();
             x.classList.add("is-active");
+        }
+        else {
+           
+            historico=atual;
         }
         
         document.getElementById('alvo').innerHTML = pagina;
