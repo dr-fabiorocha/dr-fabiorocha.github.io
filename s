@@ -1,0 +1,14 @@
+awards
+cafe
+CNAME
+contact
+extension
+home
+images
+index.html
+office
+research
+s
+skills
+style.css
+tcc
