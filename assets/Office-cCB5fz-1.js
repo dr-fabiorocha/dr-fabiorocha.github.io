@@ -1,0 +1,1 @@
+import{_ as s,c as o,a as t,o as a}from"./index-BkIvara8.js";const c="/assets/Horario-FRR-Hb8hbTGU.webp",r={},i={class:"pagina"};function n(_,e){return a(),o("div",i,[...e[0]||(e[0]=[t("img",{width:"90%",alt:"office hours",id:"image",src:c},null,-1)])])}const d=s(r,[["render",n],["__scopeId","data-v-6f1e9018"]]);export{d as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as r,a as s,F as n,o}from"./index-BkIvara8.js";const a={};function l(d,e){return o(),r(n,null,[e[0]||(e[0]=s("div",null,[s("h2",null,"Prêmios")],-1)),e[1]||(e[1]=s("p",null," First place at embedded system contest #MakewithMaxim sponsored by Maxim Integrated & Mouser Electronics. ",-1))],64)}const i=t(a,[["render",l]]);export{i as default};

@@ -1,0 +1,1 @@
+import{_ as e}from"./index-BkIvara8.js";const t={components:{},data(){return{}},computed:{},methods:{},watch:{},created(){this.$router.replace({name:"main"}),window.open("https://arquivos.ufsc.br/d/ce9edf09c05d463dae75/?p=%2F2026.1.Sistemas_Digitais_Embarcados&mode=list","_blank")}};function a(s,o,r,c,n,d){return null}const p=e(t,[["render",a]]);export{p as default};

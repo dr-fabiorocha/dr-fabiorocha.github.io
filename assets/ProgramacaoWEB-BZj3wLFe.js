@@ -1,0 +1,1 @@
+import{_ as e}from"./index-BkIvara8.js";const t={components:{},data(){return{}},computed:{},methods:{},watch:{},created(){this.$router.replace({name:"main"}),window.open("https://arquivos.ufsc.br/d/ce9edf09c05d463dae75/?p=%2F2026.1.Programa%C3%A7%C3%A3o_WEB&mode=list","_blank")}};function o(r,a,s,c,n,d){return"sss"}const m=e(t,[["render",o]]);export{m as default};
